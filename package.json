@@ -1,0 +1,21 @@
+{
+  "name": "stock-ticker-widget",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A compact draggable Electron widget for seeded JP and US stock tickers.",
+  "main": "src/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/greenteabiscuit/stock-ticker-electron-widget.git"
+  },
+  "bugs": {
+    "url": "https://github.com/greenteabiscuit/stock-ticker-electron-widget/issues"
+  },
+  "homepage": "https://github.com/greenteabiscuit/stock-ticker-electron-widget#readme",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^31.7.7"
+  }
+}

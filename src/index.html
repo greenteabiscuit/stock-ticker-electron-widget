@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Ticker Widget</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="widget" aria-label="Stock ticker widget">
+      <section class="drag-hint">
+        <span class="drag-hint-copy">Stocks • drag this bar • right-click for menu</span>
+        <span class="shortcut-hint" aria-label="Shortcut: Control Shift K">Ctrl Shift K</span>
+        <button class="icon-button refresh-button" type="button" aria-label="Refresh prices">↻</button>
+        <button class="icon-button shrink-button" type="button" aria-label="Shrink widget">−</button>
+      </section>
+
+      <section class="scroll-area">
+        <header class="stock-header">
+          <div>
+            <div class="eyebrow">JP + US watchlist</div>
+            <h1>Stock Ticker</h1>
+          </div>
+          <div class="header-side">
+            <div class="badge">MVP</div>
+            <div class="conversion-note" title="Quick scale reminder: billion = 10億; at ¥160/USD, $1B ≈ 1,600億円">$1B ≈ 1,600億円</div>
+          </div>
+        </header>
+
+        <section class="summary-card" aria-live="polite">
+          <div class="summary-label">Last updated</div>
+          <div class="last-updated">Loading seeded stocks…</div>
+        </section>
+
+        <section class="stock-list" aria-live="polite"></section>
+      </section>
+
+      <div class="resize-edge resize-edge-right" data-resize-handle="right" aria-hidden="true"></div>
+      <div class="resize-edge resize-edge-bottom" data-resize-handle="bottom" aria-hidden="true"></div>
+      <div class="resize-corner" data-resize-handle="corner" aria-hidden="true"></div>
+      <div class="compact-drag-region" aria-hidden="true"></div>
+      <button class="compact-launcher" type="button" aria-label="Expand widget">株</button>
+    </main>
+
+    <dialog class="buy-modal" aria-labelledby="buyModalTitle">
+      <form class="buy-form" method="dialog">
+        <header class="buy-modal-header">
+          <div>
+            <div class="buy-modal-eyebrow">Practice buy</div>
+            <h2 id="buyModalTitle">Buy rationale</h2>
+          </div>
+          <button class="buy-modal-close" type="button" aria-label="Close buy modal">×</button>
+        </header>
+
+        <p class="buy-modal-summary"></p>
+
+        <label class="buy-reason-label" for="buyReasonInput">Why do you want to buy it?</label>
+        <textarea id="buyReasonInput" class="buy-reason-input" rows="5" placeholder="Write the thesis, catalyst, valuation view, risk, or what you want to test…" required></textarea>
+
+        <section class="buy-history-panel" aria-label="Previous practice buys">
+          <div class="buy-history-title">Past reasons</div>
+          <div class="buy-history-list"></div>
+        </section>
+
+        <footer class="buy-modal-actions">
+          <button class="buy-cancel-button" type="button">Cancel</button>
+          <button class="buy-save-button" type="submit">Save practice buy</button>
+        </footer>
+      </form>
+    </dialog>
+    <script src="renderer.js"></script>
+  </body>
+</html>
