@@ -2,6 +2,10 @@
 
 A small frameless Electron widget that shows seeded JP and US stock tickers, names, and prices.
 
+## Preview
+
+![Stock Ticker Electron Widget preview](docs/assets/stock-ticker-widget-screenshot.png)
+
 ## Run
 
 ```sh
